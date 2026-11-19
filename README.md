@@ -14,6 +14,7 @@ This repository contains my Data Structures and Algorithms solutions in Java.
 | # | Problem | Topic | Difficulty | Solution |
 |---|---|---|---|---|
 | 219 | [Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/) | Arrays / Hashing | Easy | [Java](arrays/ContainsDuplicateII.java) |
+| 2567 | [Minimum Score by Changing Two Elements](https://leetcode.com/problems/minimum-score-by-changing-two-elements/) | Arrays / Sorting | Medium | [Java](arrays/2567.%20Minimum%20Score%20by%20Changing%20Two%20Elements.java) |
 
 ## Solution Explanation: Contains Duplicate II
 
@@ -31,6 +32,27 @@ For `nums = [1, 2, 3, 1]` and `k = 3`, the final `1` is already in the sliding w
 
 - Time complexity: `O(n)` because each number is added and removed at most once.
 - Space complexity: `O(min(n, k))` because the set keeps at most `k` recent numbers.
+
+## Solution Explanation: Minimum Score by Changing Two Elements
+
+After sorting the array, the smallest value is at the beginning and the largest value is at the end. Because we can change two elements, only three useful choices need to be checked:
+
+1. Change the two smallest elements. The remaining range is `nums[n - 1] - nums[2]`.
+2. Change the smallest and largest elements. The remaining range is `nums[n - 2] - nums[1]`.
+3. Change the two largest elements. The remaining range is `nums[n - 3] - nums[0]`.
+
+The answer is the smallest result among these three choices.
+
+For example, with `nums = [1, 4, 7, 8, 5]`, sorting gives `[1, 4, 5, 7, 8]`:
+
+- Change the two smallest: `8 - 5 = 3`
+- Change the smallest and largest: `7 - 4 = 3`
+- Change the two largest: `5 - 1 = 4`
+
+The minimum possible score is therefore `3`.
+
+- Time complexity: `O(n log n)` because the array is sorted.
+- Space complexity: `O(log n)` for Java's primitive-array sorting stack usage.
 
 ## Repository Structure
 
