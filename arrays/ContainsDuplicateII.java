@@ -24,7 +24,7 @@ import java.util.HashSet;
  *
  * If no nearby duplicate is found after checking every number, return false.
  */
-class Solution {
+public class ContainsDuplicateII {
     public boolean containsNearbyDuplicate(int[] nums, int k) {
         // Stores numbers from the last k indexes.
         HashSet<Integer> set = new HashSet<>();
