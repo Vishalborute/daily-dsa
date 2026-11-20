@@ -13,8 +13,40 @@ This repository contains my Data Structures and Algorithms solutions in Java.
 
 | # | Problem | Topic | Difficulty | Solution |
 |---|---|---|---|---|
+| 1 | [Two Sum](https://leetcode.com/problems/two-sum/) | Arrays / Hashing | Easy | [Java](arrays/1.%20Two%20Sum.java) |
+| 20 | [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) | Stack | Easy | [Java](stack-and-queue/20.%20Valid%20Parentheses.java) |
+| 33 | [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) | Binary Search | Medium | [Java](binary-search/33.%20Search%20in%20Rotated%20Sorted%20Array.java) |
+| 125 | [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | Strings / Two Pointers | Easy | [Java](strings/125.%20Valid%20Palindrome.java) |
 | 219 | [Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/) | Arrays / Hashing | Easy | [Java](arrays/ContainsDuplicateII.java) |
 | 2567 | [Minimum Score by Changing Two Elements](https://leetcode.com/problems/minimum-score-by-changing-two-elements/) | Arrays / Sorting | Medium | [Java](arrays/2567.%20Minimum%20Score%20by%20Changing%20Two%20Elements.java) |
+
+## Solution Explanation: Two Sum
+
+For each number, compute the complement needed to reach the target. A hash map stores the values already seen and their indexes. If the complement is present, return its stored index and the current index; otherwise, store the current value. Looking up and inserting each value takes constant average time.
+
+- Time complexity: `O(n)` because the array is scanned once.
+- Space complexity: `O(n)` for the map.
+
+## Solution Explanation: Valid Parentheses
+
+Use a stack to track unmatched opening brackets. Push each opening bracket. For a closing bracket, fail if the stack is empty or its top is not the matching opening bracket; otherwise, pop it. The string is valid only if the stack is empty after processing every character.
+
+- Time complexity: `O(n)` because each character is processed once.
+- Space complexity: `O(n)` for the stack in the worst case.
+
+## Solution Explanation: Valid Palindrome
+
+Compare characters from the two ends, skipping any character that is not a letter or digit. Compare the remaining characters without regard to case, then move both pointers inward. If all pairs match, the string is a palindrome under the problem's rules.
+
+- Time complexity: `O(n)` because the pointers traverse the string at most once.
+- Space complexity: `O(1)` because only two indexes are used.
+
+## Solution Explanation: Search in Rotated Sorted Array
+
+At each binary-search step, at least one half of the rotated array is sorted. Check which half is sorted, then determine whether the target lies within that half. Keep only the half that can contain the target; return its index when found or `-1` when the range is empty.
+
+- Time complexity: `O(log n)` because the search range is halved each iteration.
+- Space complexity: `O(1)` because the search uses only a fixed number of variables.
 
 ## Solution Explanation: Contains Duplicate II
 
