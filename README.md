@@ -19,6 +19,7 @@ This repository contains my Data Structures and Algorithms solutions in Java.
 | 125 | [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | Strings / Two Pointers | Easy | [Java](strings/125.%20Valid%20Palindrome.java) |
 | 219 | [Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/) | Arrays / Hashing | Easy | [Java](arrays/ContainsDuplicateII.java) |
 | 2567 | [Minimum Score by Changing Two Elements](https://leetcode.com/problems/minimum-score-by-changing-two-elements/) | Arrays / Sorting | Medium | [Java](arrays/2567.%20Minimum%20Score%20by%20Changing%20Two%20Elements.java) |
+| 3331 | [Find Subtree Sizes After Changes](https://leetcode.com/problems/find-subtree-sizes-after-changes/) | Trees / Depth-First Search | Medium | [Java](trees/3331.%20Find%20Subtree%20Sizes%20After%20Changes.java) |
 
 ## Solution Explanation: Two Sum
 
@@ -85,6 +86,15 @@ The minimum possible score is therefore `3`.
 
 - Time complexity: `O(n log n)` because the array is sorted.
 - Space complexity: `O(log n)` for Java's primitive-array sorting stack usage.
+
+## Solution Explanation: Find Subtree Sizes After Changes
+
+First, traverse the original tree while tracking the nearest ancestor for each lowercase letter. This determines every node's new parent from the original tree, as required by the simultaneous changes. Then build the changed tree and process its nodes in reverse traversal order, adding each subtree size to its parent.
+
+Both traversals are iterative to safely handle a tree with up to 100,000 nodes.
+
+- Time complexity: `O(n)` because each node and edge is processed a constant number of times.
+- Space complexity: `O(n)` for the trees, traversal stacks, and result arrays.
 
 ## Repository Structure
 
